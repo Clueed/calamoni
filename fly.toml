@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for calamoni on 2023-11-13T21:35:04+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "calamoni"
+primary_region = "ams"
+
+[build.args]
+  TMOD_VERSION="v2023.09.3.2"
+
+[env]
+  TMOD_WORLDNAME="Putrid_Reach_of_Crests"
+  # TMOD_AUTODOWNLOAD="2824688072,2824688266"
+  TMOD_ENABLEDMODS="2824688072,2824688266"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 7777
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 7777
+
+[mounts]
+  source="data"
+  destination="/data"
