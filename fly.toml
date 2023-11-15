@@ -5,6 +5,7 @@
 
 app = "calamoni"
 primary_region = "ams"
+kill_timeout = 120
 
 [build.args]
   TMOD_VERSION="v2023.09.3.2"
