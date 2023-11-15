@@ -1,6 +1,6 @@
-# 🧉 Calamoni
+# 🧉 Calamoni 🧉
+### ___Scale-to-0 optimized tModLoader deployment with [fly.io](http://fly.io)___
 
-_Scale-to-0 optimized tModLoader deployment with [fly.io](http://fly.io)_
 
 All credits (and rights) go to [JACOBSMILE](https://github.com/JACOBSMILE) for creating the underlying docker image. Please see the [original readme](https://github.com/JACOBSMILE/tmodloader1.4/blob/master/README.md) for configuration options.
 
