@@ -114,7 +114,7 @@ COPY --from=builder /root/installer/linux32/libstdc++.so.6 /lib/
 RUN chown -R root:root /usr/bin/ /etc/ssl/certs /lib/ /usr/lib/
 
 RUN apt-get update \
-    && apt-get install -y wget unzip tmux bash libsdl2-2.0-0
+    && apt-get install -y wget unzip tmux bash libsdl2-2.0-0 awscli
 
 RUN mkdir /data
 RUN mkdir /data/tModLoader
@@ -137,11 +137,13 @@ COPY entrypoint.sh .
 COPY inject.sh /usr/local/bin/inject
 COPY autosave.sh .
 COPY prepare-config.sh .
+COPY backup.sh .
 
 RUN chmod 755 ./LaunchUtils/DotNetInstall.sh \
     && chmod 755 ./LaunchUtils/ScriptCaller.sh \
     && chmod 755 ./entrypoint.sh \
     && chmod 755 ./autosave.sh \
+    && chmod 755 ./backup.sh \
     && chmod 755 /usr/local/bin/inject \
     && chmod 755 ./prepare-config.sh \
     && chmod 755 ./start-tModLoaderServer.sh
