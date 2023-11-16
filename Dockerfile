@@ -114,7 +114,7 @@ COPY --from=builder /root/installer/linux32/libstdc++.so.6 /lib/
 RUN chown -R root:root /usr/bin/ /etc/ssl/certs /lib/ /usr/lib/
 
 RUN apt-get update \
-    && apt-get install -y wget unzip tmux bash libsdl2-2.0-0 awscli
+    && DEBIAN_FRONTEND="noninteractive" TZ="Europe/Amsterdam" apt-get install -y wget unzip tmux bash libsdl2-2.0-0 awscli
 
 RUN mkdir /data
 RUN mkdir /data/tModLoader
