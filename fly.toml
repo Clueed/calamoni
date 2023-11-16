@@ -7,13 +7,9 @@ app = "calamoni"
 primary_region = "ams"
 kill_timeout = 120
 
-[build.args]
-  TMOD_VERSION="v2023.09.3.2"
-
 [env]
-  TMOD_WORLDNAME="Putrid_Reach_of_Crests"
-  # TMOD_AUTODOWNLOAD="2824688072,2824688266,2563309347,2824688804"
-  TMOD_ENABLEDMODS="2824688072,2824688266,2563309347,2824688804"
+  AWS_DEFAULT_REGION=auto
+  R2_BUCKET_NAME=calamine
 
 
 [[services]]
